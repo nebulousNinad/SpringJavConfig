@@ -24,7 +24,24 @@ public class Person {
 	
 	private String name;
 	
+	private String username;
+	private String password;
+	
+	
+	
 	private String country;
+
+	public Person(String string) {
+	this.name=string;
+	}
+	
+	
+
+	public Person() {
+		super();
+	}
+
+
 
 	public int getId() {
 		return id;
@@ -35,6 +52,7 @@ public class Person {
 	}
 
 	public String getName() {
+		
 		return name;
 	}
 
@@ -48,6 +66,10 @@ public class Person {
 
 	public void setCountry(String country) {
 		this.country = country;
+	}
+	
+	public void myAspectForPerson(){
+		System.out.println("inside advised method");
 	}
 	
 	@Override

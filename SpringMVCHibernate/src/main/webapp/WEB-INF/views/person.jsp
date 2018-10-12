@@ -19,7 +19,7 @@
 
 <c:url var="addAction" value="/person/add" ></c:url>
 
-<form:form action="${addAction}" commandName="person">
+<form:form action="${addAction}" modelAttribute="person">
 <table>
 	<c:if test="${!empty person.name}">
 	<tr>
@@ -36,8 +36,8 @@
 	</c:if>
 	<tr>
 		<td>
-			<form:label path="name">
-				<spring:message text="Name"/>
+			<form:label path="name">               <!-- this is the property name in object  -->
+				<spring:message text="Name"/>  <!-- this this visible on UI  -->
 			</form:label>
 		</td>
 		<td>
@@ -57,15 +57,13 @@
 	<tr>
 		<td colspan="2">
 			<c:if test="${!empty person.name}">
-				<input type="submit"
-					value="<spring:message text="Edit Person"/>" />
+				<input type="submit" value="<spring:message text="Edit Person"/>" />
 			</c:if>
 			<c:if test="${empty person.name}">
-				<input type="submit"
-					value="<spring:message text="Add Person"/>" />
+				<input type="submit" value="<spring:message text="Add Person"/>" />
 			</c:if>
 		</td>
-	</tr>c 
+	</tr>
 </table>	
 </form:form>
 <br>
